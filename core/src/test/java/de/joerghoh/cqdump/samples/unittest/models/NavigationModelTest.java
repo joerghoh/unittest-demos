@@ -53,17 +53,4 @@ public class NavigationModelTest {
         assertNull (navigationItems);
     }
     
-    
-    
-    
-    @Test
-    public void test_detectSiteRootPage() {
-        Resource r = context.resourceResolver().getResource("/content/site1/page1");
-        Page p = r.adaptTo(Page.class);
-        assertNotNull(p);
-        NavigationModel model = new NavigationModel();
-        Page root = model.detectSiteRootPage(p);
-        assertNotNull(root);
-        assertEquals("/content/site1",root.getPath());
-    }
 }
