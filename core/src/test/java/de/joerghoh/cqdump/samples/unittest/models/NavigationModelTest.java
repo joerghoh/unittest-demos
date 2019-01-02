@@ -38,16 +38,17 @@ public class NavigationModelTest {
         
         Resource r = context.resourceResolver().getResource("/content/site1/page1/jcr:content");
         assertNotNull(r);
-        NavigationModel navigationModel = context.getService(ModelFactory.class).createModel(r,NavigationModel.class);
+        NavigationModel navigationModel = r.adaptTo(NavigationModel.class);
         List<Page> navigationItems = navigationModel.getNavigationItems();
         assertEquals(3,navigationItems.size());
+        
     }
     
     @Test
     public void test_site2_SiteRootSetToFalse() {
         Resource r = context.resourceResolver().getResource("/content/site2/page1/jcr:content");
         assertNotNull(r);
-        NavigationModel navigationModel = context.getService(ModelFactory.class).createModel(r,NavigationModel.class);
+        NavigationModel navigationModel = r.adaptTo(NavigationModel.class);
         List<Page> navigationItems = navigationModel.getNavigationItems();
         assertNull (navigationItems);
     }
