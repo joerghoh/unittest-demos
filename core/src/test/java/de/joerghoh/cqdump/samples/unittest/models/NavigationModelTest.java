@@ -29,7 +29,7 @@ public class NavigationModelTest {
     
     @Before
     public void setup() {
-        context.load().json(NavigationModelTest.class.getResourceAsStream("NavigationModeltest.json"), "/content");
+        context.load().json(NavigationModelTest.class.getResourceAsStream("NavigationModelTest.json"), "/content");
     }
     
     
